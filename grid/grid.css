@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    background-color: #fff;
+    color: #4e4544;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page layout */
+
+.container {
+    max-width: 1700px;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 0 60px;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr; /*กำหนด grid 2 columns 3fr กว้างกว้า 1fr*/
+    grid-template-areas: 
+        "header header"
+        "main sidebar"
+        "footer footer";
+
+    grid-gap: 60px;
+}
+
+/* haeder */
+
+header {
+    grid-area: header; /* grid-template-areas: "header header" */
+
+    color: #ef5350;
+    padding: 20px 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+header nav {
+    justify-self: start;
+    list-style: none;
+}
+header nav li {
+    margin-right: 15px;
+    display: inline-block;
+}
+header button {
+    justify-self: end;
+    background-color: #ef5350;
+    border: none;
+    padding: 8px 25px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Main Section */
+
+.main {
+    grid-area: main;
+    display: grid;
+    text-align: center;
+}
+
+.main h2 {
+    font-size: 32px;
+    margin-bottom: 55px;
+}
+
+.main p {
+    margin-bottom: 50px;
+}
+
+.main img {
+    width: 100%;
+    
+}
+
+/* Sidebar */
+
+.sidebar {
+    border: 1px solid #a2a2a2;
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+
+    color: #ef5350;
+    text-align:  center;
+    padding: 20px 0;
+    background-color: #4e4544;
+}
+
+footer p {
+    color: #777;
+    font: 12px;
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+    .container {    
+        display: grid;
+        grid-template-columns: 1fr; /*กำหนด grid 1 columns*/
+        grid-template-areas: 
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    
+    }
+}
